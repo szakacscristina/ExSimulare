@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox alignment="center" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller">
+
+    <VBox>
+        <Label text="Invoices:" />
+        <TableView fx:id="tableViewEvents">
+            <columns>
+                <TableColumn fx:id="tableColumnId" text="id">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnName" text="Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+
+                </TableColumn>
+                <TableColumn fx:id="tableColumnDay" text="Day">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="day" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnDuration" text="Duration">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="duration" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="tableColumnStartHour" text="Start Hour ">
+                  <cellValueFactory>
+                    <PropertyValueFactory property="starthour" />
+                  </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button fx:id="btnInvoiceAdd" onAction="#btnEventAddClick" text="Add Invoice" />
+        <HBox alignment="BOTTOM_RIGHT">
+            <TextField fx:id="txtInvoiceDateForSum" prefHeight="25.0" prefWidth="110.0" promptText="Date" />
+            <Button fx:id="btnSumOfInvoices" onAction="#btnEventsMaximumDayClick" text="Maximum of events" />
+            <Pane prefHeight="0.0" prefWidth="11.0" />
+            <Label fx:id="sum" prefHeight="26.0" prefWidth="100.0" />
+        </HBox>
+    </VBox>
+
+</HBox>
